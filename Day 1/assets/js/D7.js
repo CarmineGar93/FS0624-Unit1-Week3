@@ -6,7 +6,7 @@ console.log('-------------------------------ESERCIZIO 1-------------------------
 
 function concatString(string1, string2) {
   let a = string1.slice(0, 2);
-  let b = string2.slice(string2.length-3,string2.length)
+  let b = string2.slice(-3);
   let concat = a.concat(b).toUpperCase();
   console.log(concat);
 }
@@ -310,18 +310,24 @@ function filteredFilm() {
   console.log(filtered);
 }
 
-filteredFilm(movies);
+filteredFilm();
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 
 console.log('-------------------------------ESERCIZIO 13-----------------------------');
-function totYear () {
+/*function totYear () {
   arrayYear = movies.map(item => {
     return parseInt(item.Year);
   })
   const totYear = arrayYear.reduce((sum, item) => sum + item); // se parto da zero?
+  console.log(totYear);
+}
+
+totYear();*/
+function totYear() {
+  const totYear = movies.reduce((sum, item) => sum + parseInt(item.Year), 0); // se parto da zero?
   console.log(totYear);
 }
 
