@@ -261,10 +261,10 @@ console.log('-------------------------------ESERCIZIO 9-------------------------
 function olderFilm () {
   let older = 2024;
   let olderFilm = {};
-  movies.forEach(index => {
-    if (index.Year < older) {
-      olderFilm = {...index};
-      older = index.Year;
+  movies.forEach(item => {
+    if (item.Year < older) {
+      olderFilm = {...item};
+      older = item.Year;
     }
   })
   console.log(olderFilm);
@@ -318,10 +318,10 @@ filteredFilm(movies);
 
 console.log('-------------------------------ESERCIZIO 13-----------------------------');
 function totYear () {
-  arrayYear = movies.map(index => {
-    return parseInt(index.Year);
+  arrayYear = movies.map(item => {
+    return parseInt(item.Year);
   })
-  const totYear = arrayYear.reduce((sum, index) => sum + index); // se parto da zero?
+  const totYear = arrayYear.reduce((sum, item) => sum + item); // se parto da zero?
   console.log(totYear);
 }
 
