@@ -18,7 +18,7 @@ concatString('Hello', 'World');
 */
 
 console.log('-------------------------------ESERCIZIO 2-----------------------------');
-function arrayRandom () {
+/*function arrayRandom () {
   let array = [];
   for (let i = 0; i < 10; i++) {
     let random = Math.floor((Math.random()) * 101);
@@ -33,7 +33,22 @@ function arrayRandom () {
   return array;
 }
 
-console.log(arrayRandom());
+console.log(arrayRandom());*/
+
+function arrayRandom() {
+  let array = [];
+  for (let i = 0; i < 10; i++) {
+    let random = Math.floor((Math.random()) * 101);
+    let controllo = array.findIndex(item => item === random);
+    if (controllo === -1) {
+      array.push(random);
+    } else {
+      i--;
+    }
+  }
+  console.log(array);
+}
+arrayRandom();
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
@@ -127,7 +142,7 @@ console.log('-------------------------------ESERCIZIO 8-------------------------
 
 function arrayOdd() {
   let array = [];
-  for (let i = 0; i <= 100; i++) {
+  for (let i = 1; i <= 100; i++) {
     if (i % 2 !== 0) {
     array.push(i);
     }
