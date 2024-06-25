@@ -167,13 +167,14 @@ const generateTable = function () {
   const tableHead = document.createElement("thead");
   const tableBody = document.createElement("tbody");
   const rowHead = document.createElement("tr");
+  //creazione thead
   let array = ["immagine", "nome prodotto", "quantità", "prezzo"];
   array.forEach((item) => {
     let cellHead = document.createElement("th");
     cellHead.innerText = item;
     rowHead.appendChild(cellHead);
   });
-  tableHead.appendChild(rowHead);
+  //creazione tbody
   arrayTabella.forEach((item) => {
     const rowBody = document.createElement("tr");
     let cellImg = document.createElement("td");
@@ -192,6 +193,8 @@ const generateTable = function () {
     rowBody.appendChild(cellPrice);
     tableBody.appendChild(rowBody);
   });
+  //inserimento elementi
+  tableHead.appendChild(rowHead);
   table.appendChild(tableHead);
   table.appendChild(tableBody);
   divtabella.appendChild(table);
