@@ -1,0 +1,43 @@
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ body {
+     margin: 0;
+ }
+
+ body div,
+ footer {
+     padding: 1rem;
+ }
+
+ footer {
+     padding: 1rem;
+     background-color: black;
+     color: white;
+ }
+
+ .myHeading {
+     color: #ff00d6;
+ }
+
+ img {
+    width: 30px;
+ }
+
+table th, table td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 3px;
+ }
+
+ table {
+    border-collapse: collapse;
+    text-align: center;
+ }
+
+.hidden {
+    visibility: hidden;
+} 
