@@ -1,30 +1,30 @@
 let arrayTabella = [
   {
-    immagine: "../assets/img/PC.png",
+    immagine: "assets/img/PC.png",
     nomeProdotto: "PC",
     qty: 2,
     prezzo: 1000,
   },
   {
-    immagine: "../assets/img/Telefono.png",
+    immagine: "assets/img/Telefono.png",
     nomeProdotto: "Cellulare",
     qty: 10,
     prezzo: 600,
   },
   {
-    immagine: "../assets/img/Tablet.png",
+    immagine: "assets/img/Tablet.png",
     nomeProdotto: "Tablet",
     qty: 5,
     prezzo: 800,
   },
   {
-    immagine: "../assets/img/Mouse.png",
+    immagine: "assets/img/Mouse.png",
     nomeProdotto: "Mouse",
     qty: 20,
     prezzo: 50,
   },
   {
-    immagine: "../assets/img/Tastiera.png",
+    immagine: "assets/img/Tastiera.png",
     nomeProdotto: "Tastiera",
     qty: 20,
     prezzo: 100,
@@ -204,7 +204,7 @@ generateTable();
 */
 
 let newObj = {
-  immagine: "../assets/img/Stampante.png",
+  immagine: "assets/img/Stampante.png",
   nomeProdotto: "Stampante",
   qty: 3,
   prezzo: 200,
