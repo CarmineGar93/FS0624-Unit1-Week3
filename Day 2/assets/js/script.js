@@ -46,7 +46,7 @@ changeTitle();
 */
 
 const addClassToTitle = function () {
-  title.setAttribute("class", "myHeading");
+  title.classList.add('myHeading');
 };
 
 addClassToTitle();
@@ -131,10 +131,10 @@ function makeItClickable() {
   title.addEventListener("click", function () {
     if (sliced.length > 1) {
       sliced = sliced.slice(0, -1);
-      title.textContent = sliced;
+      title.innerText = sliced;
     } else {
       sliced = contenuto;
-      title.textContent = sliced;
+      title.innerText = sliced;
     }
   });
 }
@@ -166,8 +166,8 @@ const generateTable = function () {
   const table = document.createElement("table");
   const tableHead = document.createElement("thead");
   const tableBody = document.createElement("tbody");
-  const rowHead = document.createElement("tr");
   //creazione thead
+  const rowHead = document.createElement("tr");
   let array = ["immagine", "nome prodotto", "quantità", "prezzo"];
   array.forEach((item) => {
     let cellHead = document.createElement("th");
@@ -240,7 +240,7 @@ hideAllImages();
 /* EXTRA ESERCIZIO 15
 Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
 */
-const heading2 = document.querySelector("h2");
+const heading2 = document.getElementById("changeMyColor");
 const changeColorWithRandom = function () {
   heading2.addEventListener("click", function () {
     /* OPZIONE 1
