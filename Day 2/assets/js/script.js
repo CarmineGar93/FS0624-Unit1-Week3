@@ -229,8 +229,7 @@ const hideAllImages = function () {
   divtabella.addEventListener("click", function () {
     let immagini = document.querySelectorAll("#tableArea img");
     immagini.forEach((item) => {
-      let classes = item.classList;
-      classes.toggle('hidden');  
+      item.classList.toggle('hidden');  
       
     });
   });

@@ -36,6 +36,7 @@ table th, table td {
  table {
     border-collapse: collapse;
     text-align: center;
+    width: 40%;
  }
 
 .hidden {
