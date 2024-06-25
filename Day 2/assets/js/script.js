@@ -106,7 +106,7 @@ addParagraph();
 
 const hideFirstUl = function () {
   const primaLista = document.getElementById("firstList");
-  primaLista.style.display = "none";
+  primaLista.setAttribute('class', 'hidden');
 };
 
 hideFirstUl();
