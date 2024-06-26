@@ -3,7 +3,7 @@ const listInput = document.getElementById('listInput');
 const btnInsert = document.getElementById('btnInsert');
 const myActivities = document.getElementById('myActivities');
 const listItems = [];
-let controllo = [];
+let arrayCheck = [];
 
 btnInsert.addEventListener('click', function(e) {
     e.preventDefault();
@@ -27,6 +27,11 @@ function pushArray () {
 }
 
 function printList () {
+    arrayCheck = [];
+    let newTask = document.querySelectorAll('.lined');
+    for (let i = 0; i < newTask.length; i++) {
+        arrayCheck.push(newTask[i].textContent);
+    }
     myActivities.innerHTML = '';
     listItems.sort();
     for (let i = 0; i < listItems.length; i++) {
@@ -36,19 +41,29 @@ function printList () {
         let newbtn = document.createElement('button');
         newbtn.setAttribute('type', 'button');
         newbtn.setAttribute('onclick', `deleteItem(${i});`);
-        
         let newspan = document.createElement('span');
         newspan.classList.add('material-symbols-outlined');
         newspan.innerText = 'delete';
         newp.innerText = listItems[i];
+        for (let j = 0; j < arrayCheck.length; j++) {
+            if(arrayCheck[j] === listItems[i]) {
+                newp.classList.add('lined');
+            }
+        }
         newbtn.appendChild(newspan);
         newDiv.appendChild(newp);
         newDiv.appendChild(newbtn);
         myActivities.appendChild(newDiv);
     }
+    
 }
 
 function deleteItem(index) {
+    arrayCheck = [];
+    let newTask = document.querySelectorAll('.lined');
+    for (let i = 0; i < newTask.length; i++) {
+        arrayCheck.push(newTask[i].textContent);
+    }
     listItems.splice(index, 1);
     printList();
     lined();
@@ -62,6 +77,7 @@ function lined () {
     for (let i = 0; i < newTask.length; i++) {
         newTask[i].addEventListener('click', function () {
             newTask[i].classList.toggle('lined');
+            console.log(newTask[i].classList);
         })
     }
 }
