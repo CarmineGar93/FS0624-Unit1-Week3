@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+div {
+    width: 70%;
+    text-align: center;
+    margin : 20px auto
+}
+
+#myActivities div {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    
+}
+
+input {
+    width: 500px;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+#todoList button {
+    padding: 5px;
+    width: 120px;
+    background-color: lightcyan;
+    border: 1px solid lightcyan;
+    border-radius: 10px;
+    font-size: 1.3rem;
+
+    
+}
+
+#myActivities button {
+    padding: 0;
+    height: 30px;
+    width: 40px;
+    background-color: #be9d8e;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+    font-size: 1.5rem;
+
+}
+
+.lined {
+    text-decoration: line-through;
+}
