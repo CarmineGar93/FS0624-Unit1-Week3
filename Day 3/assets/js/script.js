@@ -81,3 +81,5 @@ function lined () {
         })
     }
 }
+
+console.log('Ciao');
