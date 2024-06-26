@@ -10,6 +10,7 @@ btnInsert.addEventListener('click', function(e) {
     if (!checkInput()) return;
     pushArray();
     printList();
+    lined();
     todoList.reset();
 });
 
@@ -31,12 +32,13 @@ function printList () {
     for (let i = 0; i < listItems.length; i++) {
         let newDiv = document.createElement('div');
         let newp = document.createElement ('p');
+        newp.classList.add('pippo');
         let newbtn = document.createElement('button');
         newbtn.setAttribute('type', 'button');
-        newDiv.setAttribute('onclick', `lineItem(${i});`);
         newbtn.setAttribute('onclick', `deleteItem(${i});`);
-        let newspan = document.createElement('span')
-        newspan.classList.add('material-symbols-outlined')
+        
+        let newspan = document.createElement('span');
+        newspan.classList.add('material-symbols-outlined');
         newspan.innerText = 'delete';
         newp.innerText = listItems[i];
         newbtn.appendChild(newspan);
@@ -49,11 +51,17 @@ function printList () {
 function deleteItem(index) {
     listItems.splice(index, 1);
     printList();
+    lined();
 }
 
-function lineItem (index) {
-    let pointeddiv = document.querySelector(`#myActivities div:nth-child(${index + 1}`);
-    pointeddiv.classList.toggle('lined');
-    return;
-    
+
+
+
+function lined () {
+    let newTask = document.querySelectorAll('.pippo');
+    for (let i = 0; i < newTask.length; i++) {
+        newTask[i].addEventListener('click', function () {
+            newTask[i].classList.toggle('lined');
+        })
+    }
 }
