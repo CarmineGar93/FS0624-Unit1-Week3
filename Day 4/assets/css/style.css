@@ -63,6 +63,7 @@ h1 {
 
 #extraction h2 {
     text-align: center;
+    margin: 20px;
 }
 
 .hidden {
@@ -70,7 +71,7 @@ h1 {
 }
 
 .extracted {
-    background-color: gray;
+    background-color: red;
 }
 
 #cardsNumber {

@@ -1,5 +1,6 @@
 const numbersDiv = document.getElementById('numbersDiv');
 let arrayCheck = [];
+let arrayCheck2 = [];
 
 window.addEventListener('load', init());
 
@@ -21,33 +22,33 @@ function printNumbers() {
 const btnExtraction = document.getElementById('btnExtract');
 btnExtraction.addEventListener('click', function(e) {
     e.preventDefault();
-    if (arrayCheck.length >= 90) {
-        printNumber(extractRandom());
+    if (checkCards()) {
+        endGame();
+    } else if (arrayCheck.length >= 90) {
+        printNumber(extractRandom(arrayCheck));
         endGame();
     } else {
-        printNumber(extractRandom());
+        printNumber(extractRandom(arrayCheck));
     }
     
      
 });
 
-function extractRandom() {
+function extractRandom(array) {
     let randomN = Math.floor(Math.random() * 90) + 1;
-    for (let i = 0; i < arrayCheck.length; i++) {
-        if (arrayCheck[i] === randomN) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === randomN) {
             randomN = Math.floor(Math.random() * 90) + 1;
             i = 0;
         }
     }
-    arrayCheck.push(randomN);
-    console.log(arrayCheck);
-   
+    array.push(randomN);
+    console.log(array);
     return randomN;
 };
 
 function printNumber(n) {
     let divNumbers = document.querySelectorAll('.numbers, .numbers2');
-    console.log(divNumbers);
     for (let i = 0; i < divNumbers.length; i++) {
         if (divNumbers[i].innerText == n) {
             divNumbers[i].classList.add('extracted')
@@ -106,24 +107,27 @@ function printCards(n) {
     for (i = 0; i < n; i++) {
         let newDivCard = document.createElement('div');
         newDivCard.classList.add('cards');
-        
+        arrayCheck2 = [];
         for (j = 0; j < 15; j++) {
-            let arrayCheck2 = [];
             let newDiv = document.createElement('div');
             newDiv.classList.add('numbers2');
-            let newCell = document.createElement('h3');
-            let random = Math.floor(Math.random() * 90) + 1;
-            for (let a = 0; a < arrayCheck2.length; a++) {
-                if (arrayCheck2[a] === random) {
-                    random = Math.floor(Math.random() * 90) + 1;
-                    a = 0;
-                }
-            }
-            arrayCheck2.push(random);
-            newCell.innerText = random;
+            let newCell = document.createElement('h3');          
+            newCell.innerText = extractRandom(arrayCheck2);
             newDiv.appendChild(newCell);
             newDivCard.appendChild(newDiv);
         }
         cardsContainer.appendChild(newDivCard);
+    }
+}
+
+function checkCards () {
+    let cards = document.querySelectorAll('.cards');
+    for (let i = 0; i < cards.length; i++) {
+        let divsNumber = cards[i].querySelectorAll('.extracted').length
+        if (divsNumber === 15) {
+            return true;
+        } else {
+            continue;
+        }
     }
 }
